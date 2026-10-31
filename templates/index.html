@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Visa Map</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="control-panel" aria-label="Visa search controls">
+        <div>
+          <p class="eyebrow">Passport access explorer</p>
+          <h1>Visa Requirements Map</h1>
+          <p class="intro">
+            Enter a passport country to color the world by entry requirement.
+          </p>
+        </div>
+
+        <form id="country-form" class="search-form">
+          <label for="country-input">Passport country</label>
+          <div class="search-row">
+            <input
+              id="country-input"
+              name="country"
+              type="text"
+              list="country-options"
+              placeholder="United States, India, Germany"
+              autocomplete="off"
+              required
+            >
+            <button type="submit">Show map</button>
+          </div>
+          <datalist id="country-options"></datalist>
+        </form>
+
+        <div id="status-message" class="status-message" role="status">
+          Enter any recognized passport country. Countries without Wikipedia data stay gray.
+        </div>
+
+        <div class="legend" aria-label="Visa requirement legend">
+          <h2>Legend</h2>
+          <div id="legend-items"></div>
+        </div>
+      </section>
+
+      <section class="map-panel" aria-label="World visa map">
+        <div id="map">
+          <svg id="world-map" role="img" aria-label="World map colored by visa requirement"></svg>
+          <div id="map-tooltip" class="map-tooltip" hidden></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='vendor/d3.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/topojson-client.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>
