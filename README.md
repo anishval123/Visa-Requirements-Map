@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Visa Requirements Map
 
 A small Flask + D3 app that lets users enter a passport country and view a world map colored by destination visa requirement.
@@ -54,3 +55,7 @@ python scripts/update_visa_data.py
 ```
 
 Visa rules change often. Treat Wikipedia as a convenient public source, not an official authority. Verify production data against official government sources.
+=======
+# Visa-Requirements-Map
+This is a website where you enter a country into the search bar and it shows what type of authoriation you need to enter that country.
+>>>>>>> 75e8c51acc42c5a3e15c7381097a777649736935
